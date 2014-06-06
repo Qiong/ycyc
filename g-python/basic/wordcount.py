@@ -46,7 +46,7 @@ import sys
 # Then print_words() and print_top() can just call the utility function.
 
 
-def print_words(filename):
+def word_dict(filename):
   wordcount = {}
   text = open (filename, 'r')
   for content in text:
@@ -59,9 +59,39 @@ def print_words(filename):
         wordcount[s] +=1
       else: 
         wordcount[s] = 1
-  sort = sorted (wordcount.keys())
-  for z in sort:
-    print z, wordcount[z]
+  #sort_dict = sorted (wordcount.keys())
+  #print wordcount
+  #print sort_dict
+  return wordcount
+  
+
+def print_words(filename):
+  words = word_dict(filename)
+  #print words
+  sort = sorted (words.keys())
+  sort2 = sorted(words)
+  sort3 = sorted(words.values(),reverse = True)
+  #print sort
+  #print sort2
+  #print sort3
+  for word in sort:
+    print word, words[word]
+
+
+
+def get_count(tuple_count):
+  return tuple_count[1]
+
+
+
+def print_top(filename):
+  words = word_dict(filename)
+  #print words.items()
+  sort = sorted(words.items(), key = get_count,reverse=True)
+  #print sort
+  for item in sort[:20]:
+    print item[0],item[1]
+
 
 
 
