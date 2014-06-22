@@ -18,6 +18,22 @@ import commands
 # +++your code here+++
 # Write functions and modify main() to call them
 
+def get_special_path(dirname):
+  result = []
+  path = os.listdir(dirname)
+  for fname in path:
+    match = re.search(r'__(\w+)__',fname)
+    if match:
+      result.append(os.path.abspath(os.path.join(dirname,fname)))
+  return result
+
+def copy_to(paths,to_dir):
+  if not os.path.exist(to_dir):
+    os.mkdir(to_dir)
+  for path in paths:
+    fname = os.path.basename(path)
+    shutil.copy(path, os.path.join(to_dir,fname))
+
 
 
 def main():
