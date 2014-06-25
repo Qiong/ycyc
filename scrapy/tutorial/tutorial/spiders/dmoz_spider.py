@@ -1,9 +1,10 @@
-from scrapy.spider import spider
+from scrapy.spider import Spider
 
 class DmozSpider(Spider):
 	name = "dmoz"
-	allowed_domains = [".com"]
-	start_urls = ["http://www.google.com"]
+	allowed_domains = ["dmoz.org"]
+	start_urls = ["http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
+				"http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"]
 
 	def parse(self, response):
 		filename = response.url.split("/")[-2]
