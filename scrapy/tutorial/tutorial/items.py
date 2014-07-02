@@ -5,6 +5,12 @@
 
 from scrapy.item import Item, Field
 
+class TorrentItem(Item):
+	url = Field()
+	name = Field()
+	description = Field()
+	size = Field()
+
 class DmozItem(Item):
 	title = Field()
 	link = Field()
