@@ -1,21 +1,20 @@
 from scrapy.spider import Spider
 from scrapy.selector import Selector
-from test1.items import Test1Item
-#from scrapy.http import Request
+from test1.items import CraigslistSampleItem
 
-class test11(Spider):
-	name = 'test11'
-	allowed_domain = ["tutsplus.com"]
-	start_url = ["http://code.tutsplus.com"]
+class MySpider(Spider):
+    name = "craig"
+    allowed_domains = ["craigslist.org"]
+    start_urls = ["http://sfbay.craigslist.org/npo/", 
+    			"http://seattle.craigslist.org/ctd/"]
 
-	def parse(self, response):
-		#open('aws.html', 'wb').write(response.body)
-		hxs = Selector(response)
-		titles = hxs.select('//[@class="posts__post-title"]/a/text()').extract()
-		for title in titles:
-			item = Test1Item()
-			item["title"] = title
-			yield item
-
-
- 
+    def parse(self, response):
+        hxs = Selector(response)
+        titles = hxs.select("//span[@class='pl']")
+        items=[]
+        for title in titles:
+        	item = CraigslistSampleItem()
+        	item["title"] = title.select("a/text()").extract()
+        	item["link"] = title.select("a/@href").extract()
+        	items.append(item)
+    	return items
