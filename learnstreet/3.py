@@ -11,8 +11,9 @@ def string_rot13():
     # alphabet. Also note that characters that aren't in the alphabet
     # are passed through.
     "Return a string in its ROT-13 format"
-    ss = raw_input('testin')
+    ss = raw_input('please input something-->:   ')
     total = []
+    out = ''
     lower = string.ascii_lowercase*2
     upper = string.ascii_uppercase*2
     "REPLACE THIS CODE WITH ROT-13 METHOD"
@@ -20,15 +21,26 @@ def string_rot13():
         if letter in lower:
             input = ord(letter)
             output = lower[input+13-97]
-            total.append(output)
+            out += output
         else :
             input = ord(letter)
             output = lower[input+13-65]
-            total.append(output)
-    print total
+            out += output
+    print out
+    return out
     
 def main():
     string_rot13()
+    for chr in str:
+        if chr in ascii_uppercase:
+            index = (ascii_uppercase.find(chr) + 13) % 26
+            total.append(ascii_uppercase[index])
+        elif chr in ascii_lowercase:
+            index = (ascii_lowercase.find(chr) + 13) % 26
+            total.append(ascii_lowercase[index])
+        else:
+            total.append(chr)
+    return ''.join(total)
 
 if __name__== "__main__":
     main()
