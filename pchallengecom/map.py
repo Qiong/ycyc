@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 #http://wiki.pythonchallenge.com/index.php?title=Level1:Main_Page
 
+=======
+>>>>>>> e84bc415595febd40acfbb134b5b2a0473b0c8ff
 import string
 from string import maketrans
 
