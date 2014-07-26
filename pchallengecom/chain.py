@@ -7,6 +7,10 @@
 end. 400 times is more than enough. -->
 <center>
 <a href="linkedlist.php?nothing=12345"><img src="chainsaw.jpg" border="0"/></a>
+A possibly clearer way uses a list comprehension instead of map():
+>>> for linelist in banner:
+...     line = [ch * count for ch, count in linelist]
+...     print "".join(line)
 """
 import urllib2
 import re
