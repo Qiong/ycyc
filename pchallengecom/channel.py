@@ -1,15 +1,13 @@
 #http://www.pythonchallenge.com/pc/def/channel.html
-#
-#
-#
+#http://www.pythonchallenge.com/pcc/def/oxygen.html
+
+#http://www.pythonchallenge.com/pc/def/oxygen.html
 #
 #
 import StringIO
 import zipfile
 import urllib2
 import re
-
-#z=zipfile.ZipFile(StringIO.StringIO(urllib2.urlopen('http://www.pythonchallenge.com/pc/def/channel.zip').read()))
 
 def get_challenge(str):
 	prefix= 'http://www.pythonchallenge.com/pc/'

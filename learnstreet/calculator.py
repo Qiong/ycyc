@@ -5,6 +5,7 @@ def cube(n):
     Return the cube of a number, an integer provided as 'n'
     """
     "REPLACE THIS CODE WITH YOUR CUBE METHOD"
+    
 
 def squareroot(n):
     """
