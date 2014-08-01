@@ -101,7 +101,6 @@ class BobTests(unittest.TestCase):
         self.assertEqual(
             'Fine. Be that way!', bob.hey('')
         )
-
     def test_prolonged_silence(self):
         self.assertEqual(
             'Fine. Be that way!', bob.hey('    \t')
