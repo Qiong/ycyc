@@ -18,6 +18,7 @@ def main():
 	print mypw
 	u = random.randrange(upper)
 	n = random.randrange(num)
+	
 
 if __name__ == '__main__':
 	main()
