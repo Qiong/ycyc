@@ -7,10 +7,11 @@ irregular.
 """
 import unittest
 
-from saddle_points import saddle_points
+from saddle_pointss import saddle_points
 
 
 class SaddlePointTest(unittest.TestCase):
+    
     def test_one_saddle(self):
         inp = [[9,8,7],[5,3,2],[6,6,7]]
         self.assertEqual(set([(1,0)]), saddle_points(inp))
