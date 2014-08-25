@@ -10,7 +10,7 @@ import os
 import unittest
 
 from ocr import grid, number
-
+os.environ['NO_SKIP']="Not implemented yet"
 
 class OcrTest(unittest.TestCase):
 
