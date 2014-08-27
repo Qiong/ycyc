@@ -14,10 +14,22 @@ class Phone(object):
 				result=result+str(i)
 		if len(result)<10:
 			print'bad number'
-			return
-		if len(result)>10 and result[0]!=1:
+			return '0000000000'
+		if len(result)>10 and result[0]!='1':
 			print'bad number'
-			return
+			return '0000000000'
+		if len(result)>10 and result[0]=='1':
+			result=result[1:]
+			#print 'here', result
+			return result
 		else:
 			return result
+
+	def area_code(self):
+		return self.number[0:3]
+
+	def pretty(self):
+		result='('+self.number[0:3]+')'+' '+self.number[3:6]+'-'+self.number[6:]
+		return result
+
 	
