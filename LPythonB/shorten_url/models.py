@@ -15,6 +15,7 @@ class Url(object):
 	def get_by_short_url(cls, short_url):
 		"""Returns Url instance, corresponding to short_url."""
 		url_mapping = Url.__load_url_mapping()
+		#print url_mapping.get(short_url).full_url
 		return url_mapping.get(short_url)
 
 	def __create_short_url(self):
